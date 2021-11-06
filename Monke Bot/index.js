@@ -131,5 +131,3 @@ client.on('message', message =>{
 });
 
 
-
-client.login('OTA1NDk0ODE1NjA3Nzc1MjQz.YYK5ww.sHDmhrEFUyJjx5rtFdZ1sh01eTQ');
