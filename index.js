@@ -47,7 +47,7 @@ client.once('ready', () => {
 					        	+ "is a good Monke again!  I will be keeping a close eye on you though..."
 					        
 					        ).then(msg => {
-					    		msg.delete({ timeout: 10000 })
+					    		msg.delete({ timeout: 30000 })
 					  		})
 					  		.catch("SOMETHING HAS GONE WRONG, HELP!");
 						})
@@ -61,12 +61,12 @@ client.once('ready', () => {
 					        channel.send(
 					        	
 					        	reaction.message.guild.members.cache.get(user.id).toString()
-					        	+ "is a good Monke!  Head over to " 
+					        	+ "is a good Monke!  Head over to the 📌 pinned message 📌 in " 
 					        	+ server.channels.cache.get('900778421028798474').toString() 
 					        	+ " to complete your signup to the Minecraft Sub Server!"
 					        
 					        ).then(msg => {
-					    		msg.delete({ timeout: 10000 })
+					    		msg.delete({ timeout: 30000 })
 					  		})
 					  		.catch("SOMETHING HAS GONE WRONG, HELP!");
 						})
@@ -101,7 +101,7 @@ client.once('ready', () => {
 				        	+ "is a bad Monke!  I suggest you re-agree to these rules before I tell the boss!"
 				        
 				        ).then(msg => {
-				    		msg.delete({ timeout: 10000 })
+				    		msg.delete({ timeout: 30000 })
 				  		})
 				  		.catch("SOMETHING HAS GONE WRONG, HELP!");
 					}) 
