@@ -114,6 +114,106 @@ client.once('ready', () => {
 
 	});
 
+
+	
+
+
+//	const server = client.guilds.cache.get('858882512229892107');
+	const channel2 = server.channels.cache.get('914037260905766912');
+
+	channel2.messages.fetch('914037399091298314').then((msg) => {
+
+  		client.on('messageReactionAdd', async (reaction, user) => {
+            if (reaction.message.partial) await reaction.message.fetch();
+            if (reaction.partial) await reaction.fetch();
+            if (user.bot) return;
+            if (!reaction.message.guild) return;
+ 
+            if (reaction.message.channel.id == channel2) {
+                if (reaction.emoji.name === 'abalkeMonke') {
+                	if (reaction.message.member.roles.cache.some(role => role.id === "915277876746649650")) {
+						
+						await reaction.message.guild.members.cache.get(user.id).roles.add("915277759587160074");
+	                    await reaction.message.guild.members.cache.get(user.id).roles.remove("915277876746649650");
+					 	
+					 	client.channels.fetch('914037260905766912')
+					    .then(channel2 => {
+					        channel2.send(
+					        	
+					        	reaction.message.guild.members.cache.get(user.id).toString()
+					        	+ "is a good Monke again!  I will be keeping a close eye on you though..."
+					        
+					        ).then(msg => {
+					    		msg.delete({ timeout: 30000 })
+					  		})
+					  		.catch("SOMETHING HAS GONE WRONG, HELP!");
+						})
+
+                	} else {
+
+                		await reaction.message.guild.members.cache.get(user.id).roles.add("915277759587160074");
+					 	
+					 	client.channels.fetch('914037260905766912')
+					    .then(channel2 => {
+					        channel2.send(
+					        	
+					        	reaction.message.guild.members.cache.get(user.id).toString()
+					        	+ "is a good Monke!  When the next event starts, head over to " 
+					        	+ server.channels.cache.get('910741492786663454').toString() 
+					        	+ " to secure you spot!"
+					        
+					        ).then(msg => {
+					    		msg.delete({ timeout: 30000 })
+					  		})
+					  		.catch("SOMETHING HAS GONE WRONG, HELP!");
+						})
+
+                	}
+
+                }
+            } else {
+                return;
+            }
+ 
+        });
+ 
+        client.on('messageReactionRemove', async (reaction, user) => {
+ 
+            if (reaction.message.partial) await reaction.message.fetch();
+            if (reaction.partial) await reaction.fetch();
+            if (user.bot) return;
+            if (!reaction.message.guild) return;
+ 
+ 
+            if (reaction.message.channel.id == channel2) {
+                if (reaction.emoji.name === 'abalkeMonke') {
+                    await reaction.message.guild.members.cache.get(user.id).roles.remove("915277759587160074");
+                    await reaction.message.guild.members.cache.get(user.id).roles.add("915277876746649650");
+                
+                	client.channels.fetch('914037260905766912')
+				    .then(channel2 => {
+				        channel2.send(
+				        	
+				        	reaction.message.guild.members.cache.get(user.id).toString()
+				        	+ "is a bad Monke!  I suggest you re-agree to these rules before I tell the boss!"
+				        
+				        ).then(msg => {
+				    		msg.delete({ timeout: 30000 })
+				  		})
+				  		.catch("SOMETHING HAS GONE WRONG, HELP!");
+					}) 
+
+                }
+            } else {
+                return;
+            }
+        });
+
+	});
+
+
+
+
 });
 
 
@@ -126,6 +226,8 @@ client.on('message', message =>{
 
 	if(command === 'ping'){
 		client.commands.get('ping').execute(message, args);
+	} else if(command === 'checkin'){
+		client.commands.get('checkin').execute(message, args);
 	} 
 
 });
