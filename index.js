@@ -136,7 +136,9 @@ client.once('ready', () => {
 						await reaction.message.guild.members.cache.get(user.id).roles.add("915277759587160074");
 	                    await reaction.message.guild.members.cache.get(user.id).roles.remove("915277876746649650");
 					 	
-					 	client.channels.cache.get('914037260905766912').send(
+					 	client.channels.fetch('914037260905766912')
+					    .then(channel => {
+					        channel.send(
 					        	
 					        	reaction.message.guild.members.cache.get(user.id).toString()
 					        	+ "is a good Monke again!  I will be keeping a close eye on you though..."
@@ -145,13 +147,15 @@ client.once('ready', () => {
 					    		msg.delete({ timeout: 30000 })
 					  		})
 					  		.catch("SOMETHING HAS GONE WRONG, HELP!");
-						
+						})
 
                 	} else {
 
                 		await reaction.message.guild.members.cache.get(user.id).roles.add("915277759587160074");
 					 	
-					 	client.channels.cache.get('914037260905766912').send(
+					 	client.channels.fetch('914037260905766912')
+					    .then(channel => {
+					        channel.send(
 					        	
 					        	reaction.message.guild.members.cache.get(user.id).toString()
 					        	+ "is a good Monke!  When the next event starts, head over to " 
@@ -162,7 +166,7 @@ client.once('ready', () => {
 					    		msg.delete({ timeout: 30000 })
 					  		})
 					  		.catch("SOMETHING HAS GONE WRONG, HELP!");
-						
+						})
 
                 	}
 
@@ -186,7 +190,9 @@ client.once('ready', () => {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove("915277759587160074");
                     await reaction.message.guild.members.cache.get(user.id).roles.add("915277876746649650");
                 
-                	client.channels.cache.get('914037260905766912').send(
+                	client.channels.fetch('914037260905766912')
+				    .then(channel => {
+				        channel.send(
 				        	
 				        	reaction.message.guild.members.cache.get(user.id).toString()
 				        	+ "is a bad Monke!  I suggest you re-agree to these rules before I tell the boss!"
@@ -195,7 +201,7 @@ client.once('ready', () => {
 				    		msg.delete({ timeout: 30000 })
 				  		})
 				  		.catch("SOMETHING HAS GONE WRONG, HELP!");
-					 
+					}) 
 
                 }
             } else {
