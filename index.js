@@ -138,7 +138,7 @@ client.once('ready', () => {
 					 	
 					 	client.channels.fetch('914037260905766912')
 					    .then(channel2 => {
-					        channel.send(
+					        channel2.send(
 					        	
 					        	reaction.message.guild.members.cache.get(user.id).toString()
 					        	+ "is a good Monke again!  I will be keeping a close eye on you though..."
@@ -155,7 +155,7 @@ client.once('ready', () => {
 					 	
 					 	client.channels.fetch('914037260905766912')
 					    .then(channel2 => {
-					        channel.send(
+					        channel2.send(
 					        	
 					        	reaction.message.guild.members.cache.get(user.id).toString()
 					        	+ "is a good Monke!  When the next event starts, head over to " 
@@ -192,7 +192,7 @@ client.once('ready', () => {
                 
                 	client.channels.fetch('914037260905766912')
 				    .then(channel2 => {
-				        channel.send(
+				        channel2.send(
 				        	
 				        	reaction.message.guild.members.cache.get(user.id).toString()
 				        	+ "is a bad Monke!  I suggest you re-agree to these rules before I tell the boss!"
