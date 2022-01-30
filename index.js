@@ -137,7 +137,7 @@ client.once('ready', () => {
 	                    await reaction.message.guild.members.cache.get(user.id).roles.remove("915277876746649650");
 					 	
 					 	client.channels.fetch('914037260905766912')
-					    .then(channel => {
+					    .then(channel2 => {
 					        channel.send(
 					        	
 					        	reaction.message.guild.members.cache.get(user.id).toString()
@@ -154,7 +154,7 @@ client.once('ready', () => {
                 		await reaction.message.guild.members.cache.get(user.id).roles.add("915277759587160074");
 					 	
 					 	client.channels.fetch('914037260905766912')
-					    .then(channel => {
+					    .then(channel2 => {
 					        channel.send(
 					        	
 					        	reaction.message.guild.members.cache.get(user.id).toString()
@@ -191,7 +191,7 @@ client.once('ready', () => {
                     await reaction.message.guild.members.cache.get(user.id).roles.add("915277876746649650");
                 
                 	client.channels.fetch('914037260905766912')
-				    .then(channel => {
+				    .then(channel2 => {
 				        channel.send(
 				        	
 				        	reaction.message.guild.members.cache.get(user.id).toString()
