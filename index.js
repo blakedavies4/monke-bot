@@ -145,7 +145,7 @@ client.once('ready', () => {
 					    		msg.delete({ timeout: 30000 })
 					  		})
 					  		.catch("SOMETHING HAS GONE WRONG, HELP!");
-						})
+						
 
                 	} else {
 
@@ -162,7 +162,7 @@ client.once('ready', () => {
 					    		msg.delete({ timeout: 30000 })
 					  		})
 					  		.catch("SOMETHING HAS GONE WRONG, HELP!");
-						})
+						
 
                 	}
 
@@ -195,7 +195,7 @@ client.once('ready', () => {
 				    		msg.delete({ timeout: 30000 })
 				  		})
 				  		.catch("SOMETHING HAS GONE WRONG, HELP!");
-					}) 
+					 
 
                 }
             } else {
