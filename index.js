@@ -119,9 +119,9 @@ client.once('ready', () => {
 
 
 //	const server = client.guilds.cache.get('858882512229892107');
-	const channel2 = server.channels.cache.get('914037260905766912');
+	const channell = server.channels.cache.get('914037260905766912');
 
-	channel2.messages.fetch('914037399091298314').then((msg) => {
+	channell.messages.fetch('914037399091298314').then((msg) => {
 
   		client.on('messageReactionAdd', async (reaction, user) => {
             if (reaction.message.partial) await reaction.message.fetch();
@@ -129,7 +129,7 @@ client.once('ready', () => {
             if (user.bot) return;
             if (!reaction.message.guild) return;
  
-            if (reaction.message.channel.id == channel2) {
+            if (reaction.message.channel.id == channell) {
                 if (reaction.emoji.name === 'abalkeMonke') {
                 	if (reaction.message.member.roles.cache.some(role => role.id === "915277876746649650")) {
 						
@@ -137,8 +137,8 @@ client.once('ready', () => {
 	                    await reaction.message.guild.members.cache.get(user.id).roles.remove("915277876746649650");
 					 	
 					 	client.channels.fetch('914037260905766912')
-					    .then(channel2 => {
-					        client.channels.get('914037260905766912').send(
+					    .then(channel => {
+					        channell.send(
 					        	
 					        	reaction.message.guild.members.cache.get(user.id).toString()
 					        	+ "is a good Monke again!  I will be keeping a close eye on you though..."
@@ -154,8 +154,8 @@ client.once('ready', () => {
                 		await reaction.message.guild.members.cache.get(user.id).roles.add("915277759587160074");
 					 	
 					 	client.channels.fetch('914037260905766912')
-					    .then(channel2 => {
-					        client.channels.get('914037260905766912').send(
+					    .then(channel => {
+					        channell.send(
 					        	
 					        	reaction.message.guild.members.cache.get(user.id).toString()
 					        	+ "is a good Monke!  When the next event starts, head over to " 
@@ -185,14 +185,14 @@ client.once('ready', () => {
             if (!reaction.message.guild) return;
  
  
-            if (reaction.message.channel.id == channel2) {
+            if (reaction.message.channel.id == channell) {
                 if (reaction.emoji.name === 'abalkeMonke') {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove("915277759587160074");
                     await reaction.message.guild.members.cache.get(user.id).roles.add("915277876746649650");
                 
                 	client.channels.fetch('914037260905766912')
-				    .then(channel2 => {
-				        client.channels.get('914037260905766912').send(
+				    .then(channel => {
+				        channell.send(
 				        	
 				        	reaction.message.guild.members.cache.get(user.id).toString()
 				        	+ "is a bad Monke!  I suggest you re-agree to these rules before I tell the boss!"
