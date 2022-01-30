@@ -136,9 +136,7 @@ client.once('ready', () => {
 						await reaction.message.guild.members.cache.get(user.id).roles.add("915277759587160074");
 	                    await reaction.message.guild.members.cache.get(user.id).roles.remove("915277876746649650");
 					 	
-					 	client.channels.fetch('914037260905766912')
-					    .then(channel2 => {
-					        client.channels.fetch('914037260905766912').send(
+					 	client.channels.cache.get('914037260905766912').send(
 					        	
 					        	reaction.message.guild.members.cache.get(user.id).toString()
 					        	+ "is a good Monke again!  I will be keeping a close eye on you though..."
@@ -153,9 +151,7 @@ client.once('ready', () => {
 
                 		await reaction.message.guild.members.cache.get(user.id).roles.add("915277759587160074");
 					 	
-					 	client.channels.fetch('914037260905766912')
-					    .then(channel2 => {
-					        client.channels.fetch('914037260905766912').send(
+					 	client.channels.cache.get('914037260905766912').send(
 					        	
 					        	reaction.message.guild.members.cache.get(user.id).toString()
 					        	+ "is a good Monke!  When the next event starts, head over to " 
@@ -190,9 +186,7 @@ client.once('ready', () => {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove("915277759587160074");
                     await reaction.message.guild.members.cache.get(user.id).roles.add("915277876746649650");
                 
-                	client.channels.fetch('914037260905766912')
-				    .then(channel2 => {
-				        client.channels.fetch('914037260905766912').send(
+                	client.channels.cache.get('914037260905766912').send(
 				        	
 				        	reaction.message.guild.members.cache.get(user.id).toString()
 				        	+ "is a bad Monke!  I suggest you re-agree to these rules before I tell the boss!"
